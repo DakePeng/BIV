@@ -19,7 +19,7 @@ After taking the book:
 	say "You took the book, Simulacra and Simulation, by Jean Baudrillard. It may be helpful later.";
 	CheckIfPlayerIsReadyForFinale;
 
-The inscription on the wall is in the Bedroom. The description of the inscription on the wall is "The inscription reads 'Cogito, ergo sum,' which translates to 'I think, therefore I am.' This profound statement by René Descartes suggests that the very act of doubting or thinking is proof of one's existence. Descartes argues that our ability to think, reason, and question is the fundamental foundation of self-awareness and reality, establishing thought as the basis for our being." Understand "quote" or "the quote" or "inscription" or "the inscription" as the The inscription on the wall. 
+The inscription on the wall is in the Bedroom. The description of the inscription on the wall is "The inscription reads 'Cogito, ergo sum,' which translates to 'I think, therefore I am.' A profound statement by René Descartes. You are tempted to think about the quote." Understand "quote" or "the quote" or "inscription" or "the inscription" as the The inscription on the wall. 
 
 Understand "think [something]" as opening when the player is in the Bedroom. Understand "think about [something]" as opening when the player is in the Bedroom. 
 
@@ -62,7 +62,7 @@ To takeleverandleave:
 	
 [Room: Decarte's Hell]
 
-The Hell is a room. The description of the Hell is "You stand in a dimly lit chamber, the air heavy with a sense of foreboding. Shadows flicker along the walls, and an eerie silence fills the space. You feel a presence lurking in the corners, waiting. This is no ordinary place—it is a realm where reality itself may be questioned, distorted, and manipulated. It is the birthplace of doubt, where the mind is tested against its deepest uncertainties. [paragraph break]You recall a philosophical idea—Descartes\' Demon. Descartes, a renowned philosopher, once pondered the possibility of a powerful demon who could deceive you in every way, even controlling your thoughts, making you believe in an existence that isn't real. He suggested that all the senses, all perception of the world around you, could be illusions crafted by this malevolent force. In this place, you might be confronted by that very demon, a being whose sole purpose is to distort your reality and plunge you into doubt about everything you believe to be true.".
+The Hell is a room. The description of the Hell is "You stand in a dimly lit chamber, the air heavy with a sense of foreboding. Shadows flicker along the walls, and an eerie silence fills the space. You feel a presence lurking in the corners, waiting. This is no ordinary place—it is a realm where reality itself may be questioned, distorted, and manipulated. It is the birthplace of doubt, where the mind is tested against its deepest uncertainties. [paragraph break]You recall a philosophical idea—Descartes['] Demon. Descartes, a renowned philosopher, once pondered the possibility of a powerful demon who could deceive you in every way, even controlling your thoughts, making you believe in an existence that isn't real. He suggested that all the senses, all perception of the world around you, could be illusions crafted by this malevolent force. In this place, you might be confronted by that very demon, a being whose sole purpose is to distort your reality and plunge you into doubt about everything you believe to be true.".
 
 Instead of opening the inscription on the wall:
 	if HellEntered is false:
@@ -296,7 +296,10 @@ reply
 
 [game logic]
 To CheckIfPlayerIsReadyForFinale:
-	if the player is not in the Bedroom:
-		move the player to the Bedroom;
-	otherwise if the player has the lever and the player has the book and the player has Demon's Wisdom:
-		move the player to the Finale.
+	if the player has the lever and the player has the book and the player has Demon's Wisdom:
+		move the player to the Finale;
+	otherwise: 
+		if the player is not in the Bedroom:
+			move the player to the Bedroom;
+
+
